@@ -9,7 +9,10 @@
 
     &__button {
         @include clear-button;
+        position: relative;
         display: block;
+        position: relative;
+        z-index: 101;
 
         &--shop {
             img {
@@ -32,6 +35,32 @@
                     width: 29px;
                     height: 27px;
                 }
+            }
+        }
+
+        &--pin {
+            position: absolute;
+            padding: 0 2px;
+            min-width: 13px;
+            height: 13px;
+            border-radius: 13px;
+            text-align: center;
+            line-height: 13px;
+            font-weight: 400;
+            color: #000;
+            background-color: rgba(217, 217, 217, 1);
+            top: -5px;
+            right: -5px;
+            font-size: 7px;
+
+            @media (min-width:1728px) {
+                width: 18px;
+                height: 18px;
+                line-height: 18px;
+                top: -8px;
+                right: -8px;
+                font-size: 11px;
+                line-height: 18px;
             }
         }
     }

@@ -1,17 +1,22 @@
 .menu-buttons {
 
     &__burger {
-        @include clear-button;
+        display: none;
 
-        img {
-            position: absolute;
-            top: 20px;
-            right: 10px;
-            width: 16px;
-            height: 11px;
+        &--showed {
+            @include clear-button;
+            display: block;
 
-            @media (min-width: 321px) {
-                display: none;
+            img {
+                position: absolute;
+                top: 20px;
+                right: 10px;
+                width: 16px;
+                height: 11px;
+
+                @media (min-width: 768px) {
+                    display: none;
+                }
             }
         }
     }
