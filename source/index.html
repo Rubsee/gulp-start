@@ -5,13 +5,43 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ваш проект</title>
+  <title>Slick</title>
   <link rel="stylesheet" href="css/style.min.css">
 </head>
 
 <body>
-  <header>
-    <h1>Привет мир!!!</h1>
+  <header class="header">
+    <div class="container header__container">
+      <a class="header__logo">
+        <img src="img/slick.svg" alt="Логотип магазина Slick">
+      </a>
+      <nav class="main-nav">
+        <ul class="main-nav__list">
+          <li class="main-nav__item">
+            <a href="#">Главная</a>
+          </li>
+          <li class="main-nav__item">
+            <a href="#">Магазин</a>
+          </li>
+          <li class="main-nav__item">
+            <a href="#">Контакты</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="header__buttons user-nav">
+        <button class="user-nav__button user-nav__button--find">
+          <img src="img/icon-find.svg" alt="">
+        </button>
+        <button class="user-nav__button user-nav__button--shop">
+          <img src="img/icon-shop.svg" alt="">
+        </button>
+      </div>
+    </div>
+    <div class="menu-buttons">
+      <button class="menu-buttons__burger">
+        <img src="img/icon-menu.svg" alt="">
+      </button>
+    </div>
   </header>
 </body>
 

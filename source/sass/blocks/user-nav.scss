@@ -1,0 +1,38 @@
+.user-nav {
+    @include clear-button;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    margin-left: auto;
+
+    &__button {
+        @include clear-button;
+        display: block;
+
+        &--shop {
+            img {
+                width: 19px;
+                height: 17px;
+
+                @media (min-width: 768px) {
+                    width: 32px;
+                    height: 26px;
+                }
+            }
+        }
+
+        &--find {
+            img {
+                width: 17px;
+                height: 16px;
+
+                @media (min-width: 768px) {
+                    width: 29px;
+                    height: 27px;
+                }
+            }
+        }
+    }
+}
