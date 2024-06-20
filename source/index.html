@@ -52,7 +52,7 @@
           <img src="img/icon-find.svg" alt="">
         </button>
         <button class="user-nav__button user-nav__button--shop">
-          <span class="user-nav__button--pin">0</span>
+          <span class="user-nav__button user-nav__button--pin">0</span>
           <img src="img/icon-shop.svg" alt="">
         </button>
       </div>
@@ -67,48 +67,46 @@
     <div class="hero">
       <div class="hero__container container">
         <div class="hero__text">
-          <div class="hero__title">
-            <h1 class="hero__heading">
-              <span>Найди Свои</span>
-              <span>Идеальные</span>
-              <span>Кроссы</span>
-            </h1>
-            <p class="hero__desc">Какой-то супер-мотивирующий текст<br>
-              чтоб купили прям вообще всё</p>
-          </div>
-          <button class="hero__button">
-            <span>За покупками</span>
-          </button>
+          <ul class="hero__title preview-title">
+            <li class="preview-title__item preview-title__item--your">Найди Свои</li>
+            <li class="preview-title__item preview-title__item--ideal">Идеальные</li>
+            <li class="preview-title__item preview-title__item--sneaker">Кроссы</li>
+          </ul>
+          <p class="hero__desc">Какой-то супер-мотивирующий текст<br>
+            чтоб купили прям вообще всё</p>
+          <button class="hero__button black-button">За покупками</button>
         </div>
-        <div class="hero__product">
-          <img class="hero__product--image" src="img/white_sneaker.png" alt="Белые кроссовки">
-          <span class="hero__product--name">Trendy Slick Pro</span>
-          <span class="hero__product--price">3999 ₽</span>
+        <div class="preview-product">
+          <img class="preview-product__image" src="img/white_sneaker.png" alt="Белые кроссовки">
+          <span class="preview-product__name">Trendy Slick Pro</span>
+          <span class="preview-product__price">3999 ₽</span>
         </div>
       </div>
     </div>
-    <ul class="marketplace">
-      <li class="marketplace__ozon">
-        <a class="marketplace__tag">
-          <img src="img/ozon.svg" alt="Ozon">
-        </a>
-      </li>
-      <li class="marketplace__wb">
-        <a class="marketplace__tag">
-          <img src="img/wildberries.svg" alt="Wildberries">
-        </a>
-      </li>
-      <li class="marketplace__sber">
-        <a class="marketplace__tag">
-          <img src="img/sbermarket.svg" alt="Sbermarket">
-        </a>
-      </li>
-      <li class="marketplace__ya">
-        <a class="marketplace__tag">
-          <img src="img/ya_market.svg" alt="Yandex market">
-        </a>
-      </li>
-    </ul>
+    <section class="shop">
+      <ul class="marketplace">
+        <li class="marketplace__item marketplace__item--ozon">
+          <a class="marketplace__tag">
+            <img src="img/ozon.svg" alt="Ozon">
+          </a>
+        </li>
+        <li class="marketplace__item marketplace__item--wb">
+          <a class="marketplace__tag">
+            <img src="img/wildberries.svg" alt="Wildberries">
+          </a>
+        </li>
+        <li class="marketplace__item marketplace__item--sber">
+          <a class="marketplace__tag">
+            <img src="img/sbermarket.svg" alt="Sbermarket">
+          </a>
+        </li>
+        <li class="marketplace__item marketplace__item--ya">
+          <a class="marketplace__tag">
+            <img src="img/ya_market.svg" alt="Yandex market">
+          </a>
+        </li>
+      </ul>
+    </section>
   </main>
 </body>
 

@@ -1,0 +1,53 @@
+.preview-title {
+    @include clear-list;
+
+    &__item {
+        text-align: start;
+        font-weight: 700;
+    }
+
+    &__item--your {
+        font-size: 24px;
+        line-height: 27px;
+
+        @media (min-width: 768px) {
+            font-size: 48px;
+            line-height: 54px;
+        }
+
+        @media (min-width: 1728px) {
+            font-size: 75px;
+            line-height: 84px;
+        }
+    }
+
+    &__item--ideal {
+        font-size: 36px;
+        line-height: 40px;
+
+        @media (min-width:768px) {
+            font-size: 96px;
+            line-height: 107px;
+        }
+
+        @media (min-width: 1728px) {
+            font-size: 75px;
+            line-height: 84px;
+        }
+    }
+
+    &__item--sneaker {
+        font-size: 62px;
+        line-height: 70px;
+
+        @media (min-width: 768px) {
+            font-size: 62px;
+            line-height: 70px;
+        }
+
+        @media (min-width: 1728px) {
+            font-size: 75px;
+            line-height: 84px;
+        }
+    }
+}
