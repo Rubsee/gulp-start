@@ -1,0 +1,75 @@
+.marketplace {
+    @include clear-list;
+    display: flex;
+    padding: 24px 0 24px;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #000;
+    overflow: hidden;
+
+    @media (min-width: 768px) {
+        padding: 45px 0 45px;
+    }
+
+    @media (min-width: 1728px) {
+        padding: 60px 0 60px;
+    }
+
+    &__tag {
+        padding: 25px;
+
+        @media (min-width: 768px) {
+            padding: 50px 85px;
+        }
+    }
+
+    &__item {
+        img {
+            height: 16px;
+
+            @media (min-width: 768px) {
+                height: 40px;
+            }
+        }
+
+        &--ozon {
+            img {
+                width: 73px;
+
+                @media (min-width: 768px) {
+                    width: 181px;
+                }
+            }
+        }
+
+        &--wb {
+            img {
+                width: 106px;
+
+                @media (min-width: 768px) {
+                    width: 266px;
+                }
+            }
+        }
+
+        &--sber {
+            img {
+                width: 104px;
+
+                @media (min-width: 768px) {
+                    width: 298px;
+                }
+            }
+        }
+
+        &--ya {
+            img {
+                width: 90px;
+
+                @media (min-width: 768px) {
+                    width: 208px;
+                }
+            }
+        }
+    }
+}
