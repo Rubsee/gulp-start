@@ -116,6 +116,7 @@
         }
 
         &--big {
+            width: 100%;
             padding: 0 51px;
             padding-top: 60px;
             padding-bottom: 52px;
@@ -133,7 +134,7 @@
 
             #{$bl}__title {
                 text-align: center;
-                font-size: 63px;
+                font-size: 62px;
                 margin: 0;
                 margin-top: -30px;
                 margin-bottom: 41px;
@@ -171,9 +172,12 @@
             }
 
             @media (min-width: 1728px) {
+                width: 100%;
                 padding: 0 80px;
                 padding-top: 98px;
                 padding-bottom: 23px;
+                grid-column: span 2;
+                grid-row: span 2;
 
                 #{$bl}__image {
                     margin: 0 60px;
