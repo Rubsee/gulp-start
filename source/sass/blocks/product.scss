@@ -1,0 +1,279 @@
+.product {
+    $bl: &;
+
+    &__card {
+        width: 300px;
+        padding: 0 19px;
+        padding-top: 38px;
+        padding-bottom: 23px;
+        border: 2px solid #000;
+        border-radius: 25px;
+        border-color: #DEDEDE;
+        color: #000;
+        margin-bottom: 25px;
+        position: relative;
+
+        #{$bl}__image {
+            margin: 0 25px;
+            width: 212px;
+            height: 212px;
+        }
+
+        #{$bl}__title {
+            font-size: 24px;
+            margin: 0;
+            margin-bottom: 22px;
+        }
+
+        #{$bl}__price {
+
+            #{$bl}__price-new {
+                font-size: 24px;
+                margin-right: 20px;
+            }
+
+            #{$bl}__price-old {
+                text-decoration: line-through;
+                font-size: 18px;
+            }
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        #{$bl}__circle {
+            width: 38px;
+            height: 38px;
+            background-color: #000;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 25px;
+            right: 20px;
+        }
+
+        #{$bl}__arrow {
+            width: 14px;
+            height: 14px;
+            position: absolute;
+            bottom: 37px;
+            right: 32px;
+        }
+
+        @media (min-width: 768px) {
+            width: 344px;
+            padding: 0 30px;
+            padding-top: 38px;
+            padding-bottom: 22px;
+            margin-bottom: 0;
+
+            #{$bl}__image {
+                margin: 0 34px;
+                width: 212px;
+                height: 212px;
+            }
+
+            #{$bl}__title {
+                margin-bottom: 22px;
+            }
+        }
+
+        @media (min-width: 1728px) {
+            width: 488px;
+            padding: 0 40px;
+            padding-top: 26px;
+            padding-bottom: 25px;
+
+            #{$bl}__image {
+                margin: 0 18px;
+                width: 373px;
+                height: 373px;
+            }
+
+            #{$bl}__title {
+                margin-bottom: 21px;
+            }
+
+            #{$bl}__price {
+                #{$bl}__price-new {
+                    margin-right: 28px;
+                }
+            }
+
+            #{$bl}__circle {
+                width: 58px;
+                height: 58px;
+                bottom: 40px;
+                right: 40px;
+            }
+
+            #{$bl}__arrow {
+                width: 21px;
+                height: 21px;
+                bottom: 58px;
+                right: 59px;
+            }
+        }
+
+        &--big {
+            padding: 0 51px;
+            padding-top: 60px;
+            padding-bottom: 52px;
+            border: 2px solid #000;
+            border-radius: 25px;
+            border-color: #DEDEDE;
+            color: #000;
+            position: relative;
+
+            #{$bl}__image {
+                margin: 0 78px;
+                width: 470px;
+                height: 470px;
+            }
+
+            #{$bl}__title {
+                text-align: center;
+                font-size: 63px;
+                margin: 0;
+                margin-top: -30px;
+                margin-bottom: 41px;
+            }
+
+            #{$bl}__price {
+
+                #{$bl}__price-new {
+                    font-size: 48px;
+                    margin-right: 68px;
+                }
+
+                #{$bl}__price-old {
+                    text-decoration: line-through;
+                    font-size: 24px;
+                }
+            }
+
+            #{$bl}__circle {
+                width: 65px;
+                height: 65px;
+                background-color: #000;
+                border-radius: 50%;
+                position: absolute;
+                bottom: 53px;
+                right: 40px;
+            }
+
+            #{$bl}__arrow {
+                width: 24px;
+                height: 24px;
+                position: absolute;
+                bottom: 73px;
+                right: 60px;
+            }
+
+            @media (min-width: 1728px) {
+                padding: 0 80px;
+                padding-top: 98px;
+                padding-bottom: 23px;
+
+                #{$bl}__image {
+                    margin: 0 60px;
+                    width: 762px;
+                    height: 762px;
+                }
+
+                #{$bl}__title {
+                    text-align: start;
+                    font-size: 64px;
+                    margin-top: -40px;
+                    margin-bottom: 21px;
+                }
+
+                #{$bl}__price {
+
+                    #{$bl}__price-new {
+                        margin-right: 44px;
+                    }
+                }
+
+                #{$bl}__circle {
+                    width: 118px;
+                    height: 118px;
+                    bottom: 68px;
+                    right: 82px;
+                }
+
+                #{$bl}__arrow {
+                    width: 43px;
+                    height: 43px;
+                    position: absolute;
+                    bottom: 105px;
+                    right: 120px;
+                }
+            }
+        }
+
+        &--hot {
+            &::after {
+                background-image: url(../../img/hot-icon.svg);
+                width: 59px;
+                height: 32px;
+                content: 'Hot!';
+                color: #fff;
+                font-size: 18px;
+                line-height: 35px;
+                text-align: center;
+                position: absolute;
+                left: 0;
+                top: 51px;
+            }
+        }
+
+        &--hot-big {
+            &::after {
+                background-image: url(../../img/hot-big-icon.svg);
+                width: 120px;
+                height: 65px;
+                content: 'Hot!';
+                color: #fff;
+                font-size: 36px;
+                line-height: 65px;
+                text-align: center;
+                position: absolute;
+                left: 0;
+                top: 104px;
+            }
+        }
+
+        &--new {
+            &::after {
+                background-image: url(../../img/new-icon.svg);
+                width: 59px;
+                height: 32px;
+                content: 'New';
+                color: #fff;
+                font-size: 18px;
+                line-height: 35px;
+                text-align: center;
+                position: absolute;
+                left: 0;
+                top: 51px;
+            }
+        }
+
+        &--new-big {
+            &::after {
+                background-image: url(../../img/new-big-icon.svg);
+                width: 120px;
+                height: 65px;
+                content: 'New';
+                color: #fff;
+                font-size: 36px;
+                line-height: 65px;
+                text-align: center;
+                position: absolute;
+                left: 0;
+                top: 104px;
+            }
+        }
+    }
+}
