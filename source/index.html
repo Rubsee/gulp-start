@@ -124,8 +124,9 @@
           <button class="gender-switch__button black-button">Мужские</button>
           <button class="gender-switch__button gender-switch__button--border">Женские</button>
         </div>
-        <div class="best-selling__product-wrapper product">
-          <div class="product__card product__card--big product__label product__label--hot product__label--big">
+        <template id="product__exam">
+          <div class="product__card">
+            <!-- product__card--big product__label product__label--hot product__label--big -->
             <!-- --big на разрешении от 768px-->
             <!-- best-selling__product-wrapper--1-3-->
             <img class="product__image" src="img/gray-sneaker-big.png" alt="">
@@ -139,38 +140,14 @@
               <img class="product__arrow" src="img/arrow-icon.svg" alt="">
             </button>
           </div>
-          <div class="product__card product__label product__label--new">
-            <img class="product__image" src="img/peach-sneaker.png" alt="">
-            <h3 class="product__title">Slick sneaker shoe</h3>
-            <div class="product__price">
-              <span class="product__price product__price--new">2 999 ₽ </span>
-              <span class="product__price product__price--old">3999 ₽</span>
-            </div>
-            <button class="product__button">
-              <div class="product__circle"></div>
-              <img class="product__arrow" src="img/arrow-icon.svg" alt="">
-            </button>
-          </div>
-          <div class="product__card">
-            <img class="product__image" src="img/brown-sneaker.png" alt="">
-            <div class="product__info">
-              <h3 class="product__title">Slick canvas shoe</h3>
-              <div class="product__price">
-                <span class="product__price product__price--new">2 999 ₽ </span>
-                <span class="product__price product__price--old">3999 ₽</span>
-              </div>
-              <button class="product__button">
-                <div class="product__circle"></div>
-                <img class="product__arrow" src="img/arrow-icon.svg" alt="">
-              </button>
-            </div>
-          </div>
-        </div>
-        <button class="best-selling__show-all black-button">Показать Всё</button>
+        </template>
+        <div class="best-selling__product-wrapper product"></div>
+      </div>
+      <button class="best-selling__show-all black-button">Показать Всё</button>
       </div>
     </section>
   </main>
-  <script src="js/script.js"></script>
+  <script src="js/main.js" defer type="module"></script>
 </body>
 
 </html>
