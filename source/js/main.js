@@ -1,7 +1,10 @@
 import products from './products.js';
 import renderProducts from './renderProducts.js';
+import './script.js';
+import './productCart.js';
+import './modal.js';
 
-const catalogList = document.querySelector('.best-selling__product-wrapper product');
-const catalogItemTemplate = document.querySelector('#product__exam').content;
+const catalogList = document.querySelector('.best-selling__product-wrapper.product-list');
+const catalogItemTemplate = document.querySelector('#product-list__exam').content;
 
-renderProducts(products, catalogItemTemplate, catalogList, false, '');
+renderProducts(products, catalogItemTemplate, catalogList );

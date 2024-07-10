@@ -1,4 +1,4 @@
-.product {
+.product-list {
     $bl: &;
 
     &__card {
@@ -132,6 +132,16 @@
                 }
             }
         }
+    }
+
+    &__link {
+        text-decoration: none;
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
     }
 
     &__image {
