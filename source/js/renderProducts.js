@@ -1,4 +1,4 @@
-import products from './products.js';
+import { addProductToCart } from './productCart.js';
 
 export default (products, template, target, isTargetList = false, templateClass = '') => {
     const fragment = document.createDocumentFragment();
@@ -18,7 +18,6 @@ export default (products, template, target, isTargetList = false, templateClass 
         productEl = node;
     }
 
-
     products.forEach(product => {
         const itemEl = productEl.cloneNode(true);
         const linkEl = itemEl.querySelector('.product-list__link');
@@ -27,8 +26,10 @@ export default (products, template, target, isTargetList = false, templateClass 
         const priceNewEl = itemEl.querySelector('.product-list__price.product-list__price--new');
         const priceOldEl = itemEl.querySelector('.product-list__price.product-list__price--old');
         const buttonEl = itemEl.querySelector('.product-list__button');
-        const circleEl = itemEl.querySelector('.product-list__circle');
         const arrowImgEl = itemEl.querySelector('.product-list__arrow');
+        const modal = document.querySelector('.slick-notification');
+        const modalClosed = document.querySelector('.slick-notification__close')
+        const modalContinue = document.querySelector('.slick-notification__accept.black-button');
         const { id, link, image, title, priceNew, priceOld } = product;
 
         itemEl.dataset.productId = id;
@@ -38,7 +39,6 @@ export default (products, template, target, isTargetList = false, templateClass 
         priceNewEl.textContent = `${priceNew} ₽`;
         priceOldEl.textContent = `${priceOld} ₽`;
         buttonEl.className = 'product-list__button';
-        buttonEl.appendChild(circleEl);
         buttonEl.appendChild(arrowImgEl);
 
         if (product.id == 1 && window.innerWidth >= 768) {
@@ -58,6 +58,20 @@ export default (products, template, target, isTargetList = false, templateClass 
             itemEl.classList.add('product-list__label');
             itemEl.classList.add('product-list__label--new');
         }
+
+        // Вызов модального окна о подтверждении добавления товара в корзину
+
+        buttonEl.addEventListener('click', () => {
+            modal.classList.add('slick-notification--showed');
+            addProductToCart(product);
+        });
+
+        const closeModal = () => {
+            modal.classList.remove('slick-notification--showed');
+        };
+
+        modalClosed.addEventListener('click', closeModal);
+        modalContinue.addEventListener('click', closeModal);
 
         fragment.appendChild(itemEl);
     });

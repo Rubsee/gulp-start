@@ -70,18 +70,22 @@
             <img class="" src="img/icon_close.svg" alt="">
           </button>
           <div class="shopping-cart__body">
-            <span class="shopping-cart__title">Корзина товаров</span>
+            <span class="shopping-cart__title">Корзина Товаров</span>
             <template class="shopping-cart-product">
               <li class="shopping-cart__item">
-                <img class="shopping-cart__image" src="img/gray-sneaker-big.png" alt="">
-                <span class="shopping-cart__name">Running sport shoe</span>
-                <span class="shopping-cart__counter">| - 1 + |</span>
-                <span class="shopping-cart__price">3999 ₽</span>
+                <div class="shopping-cart__sneaker-info">
+                  <img class="shopping-cart__image" src="img/gray-sneaker-big.png" alt="">
+                  <span class="shopping-cart__name">Running sport shoe</span>
+                </div>
+                <div class="shopping-cart__sneaker-total">
+                  <span class="shopping-cart__counter">| - 1 + |</span>
+                  <span class="shopping-cart__price">3999 ₽</span>
+                </div>
               </li>
             </template>
             <ul class="shopping-cart__list"></ul>
             <ul class="shopping-cart__total">
-              <li class="shopping-cart__only">Итого:</li>
+              <li>Итого:</li>
               <li>5 шт.</li>
               <li>19 995 ₽</li>
             </ul>
@@ -160,9 +164,7 @@
               <span class="product-list__price product-list__price--old">4999 ₽</span>
             </div>
             <button class="product-list__button">
-              <div class="product-list__circle">
-                <img class="product-list__arrow" src="img/arrow-icon.svg" alt="">
-              </div>
+              <img class="product-list__arrow" src="img/arrow-icon.svg" alt="">
             </button>
           </div>
         </template>
