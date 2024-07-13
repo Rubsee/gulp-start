@@ -41,22 +41,23 @@ export default (products, template, target, isTargetList = false, templateClass 
         buttonEl.className = 'product-list__button';
         buttonEl.appendChild(arrowImgEl);
 
-        if (product.id == 1 && window.innerWidth >= 768) {
+        // Определение величины карточки и лейбла (Hot! / New)
+
+        if (product.isBig == true) {
             itemEl.classList.add('product-list__card--big');
-            itemEl.classList.add('product-list__label');
-            itemEl.classList.add('product-list__label--hot');
-            itemEl.classList.add('product-list__label--big');
-            itemEl.classList.add('best-selling__product-wrapper--1-3');
         }
 
-        if (product.id == 1 && window.innerWidth <= 767) {
+        if (product.status == 'Hot!') {
             itemEl.classList.add('product-list__label');
             itemEl.classList.add('product-list__label--hot');
         }
-
-        if (product.id == 2) {
+        else if (product.status == 'New') {
             itemEl.classList.add('product-list__label');
             itemEl.classList.add('product-list__label--new');
+        }
+
+        if (product.isBig == true && (product.status == 'Hot!' || product.status == 'New')) {
+            itemEl.classList.add('product-list__label--big');
         }
 
         // Вызов модального окна о подтверждении добавления товара в корзину
