@@ -120,21 +120,16 @@
             margin-top: 30px;
             margin-bottom: 30px;
         }
+
+        li:first-child {
+            margin-right: auto;
+        }
+
+        li:nth-child(2) {
+            margin-right: 33px;
+            margin-left: 72px;
+        }
     }
-
-    &__total li:first-child {
-        margin-right: auto;
-    }
-
-    &__total li:nth-child(2) {
-        margin-right: 33px;
-        margin-left: 72px;
-
-    }
-
-    // &__total-item:last-child {
-    //     color: #DC4B54;
-    // }
 
     &__only {}
 
