@@ -7,7 +7,7 @@ export default [
         priceOld: 4999,
         button: '',
         isBig: true,
-        status: 'Hot!',
+        status: 'hot',
     },
     {
         id: 2,
@@ -17,7 +17,7 @@ export default [
         priceOld: 3999,
         button: '',
         isBig: false,
-        status: 'New',
+        status: 'new',
     },
     {
         id: 3,

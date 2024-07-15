@@ -43,20 +43,20 @@ export default (products, template, target, isTargetList = false, templateClass 
 
         // Определение величины карточки и лейбла (Hot! / New)
 
-        if (product.isBig == true) {
+        if (product.isBig) {
             itemEl.classList.add('product-list__card--big');
         }
 
-        if (product.status == 'Hot!') {
+        if (product.status === 'hot') {
             itemEl.classList.add('product-list__label');
             itemEl.classList.add('product-list__label--hot');
         }
-        else if (product.status == 'New') {
+        else if (product.status === 'new') {
             itemEl.classList.add('product-list__label');
             itemEl.classList.add('product-list__label--new');
         }
 
-        if (product.isBig == true && (product.status == 'Hot!' || product.status == 'New')) {
+        if (product.isBig && (product.status === 'hot' || product.status === 'new')) {
             itemEl.classList.add('product-list__label--big');
         }
 
