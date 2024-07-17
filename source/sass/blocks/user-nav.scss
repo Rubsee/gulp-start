@@ -6,12 +6,26 @@
     justify-content: center;
     gap: 28px;
     margin-left: auto;
+    position: relative;
 
     &__showed {
         position: fixed;
         top: 17px;
         right: 42px;
         z-index: 101;
+    }
+
+    &__cart {
+        position: absolute;
+        right: 0;
+        top: 120%;
+        min-width: 380px;
+        display: none;
+
+        &--active {
+            display: block;
+            
+        }
     }
 
     &__button {

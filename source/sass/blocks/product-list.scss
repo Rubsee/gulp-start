@@ -1,4 +1,4 @@
-.product {
+.product-list {
     $bl: &;
 
     &__card {
@@ -33,59 +33,61 @@
         }
 
         &--big {
-            width: 100%;
-            padding: 0 51px;
-            padding-top: 60px;
-            padding-bottom: 52px;
-            border: 2px solid #000;
-            border-radius: 25px;
-            border-color: #DEDEDE;
-            color: #000;
-            position: relative;
+            @media (min-width: 768px) {
+                width: 100%;
+                padding: 0 51px;
+                padding-top: 60px;
+                padding-bottom: 52px;
+                border: 2px solid #000;
+                border-radius: 25px;
+                border-color: #DEDEDE;
+                color: #000;
+                position: relative;
 
-            #{$bl}__image {
-                margin: 0 78px;
-                width: 470px;
-                height: 470px;
-            }
-
-            #{$bl}__title {
-                text-align: center;
-                font-size: 62px;
-                margin: 0;
-                margin-top: -30px;
-                margin-bottom: 41px;
-            }
-
-            #{$bl}__price {
-
-                #{$bl}__price--new {
-                    font-size: 48px;
-                    margin-right: 68px;
+                #{$bl}__image {
+                    margin: 0 78px;
+                    width: 470px;
+                    height: 470px;
                 }
 
-                #{$bl}__price--old {
-                    text-decoration: line-through;
-                    font-size: 24px;
+                #{$bl}__title {
+                    text-align: center;
+                    font-size: 62px;
+                    margin: 0;
+                    margin-top: -30px;
+                    margin-bottom: 41px;
                 }
-            }
 
-            #{$bl}__circle {
-                width: 65px;
-                height: 65px;
-                background-color: #000;
-                border-radius: 50%;
-                position: absolute;
-                bottom: 53px;
-                right: 40px;
-            }
+                #{$bl}__price {
 
-            #{$bl}__arrow {
-                width: 24px;
-                height: 24px;
-                position: absolute;
-                bottom: 73px;
-                right: 60px;
+                    #{$bl}__price--new {
+                        font-size: 48px;
+                        margin-right: 68px;
+                    }
+
+                    #{$bl}__price--old {
+                        text-decoration: line-through;
+                        font-size: 24px;
+                    }
+                }
+
+                #{$bl}__button {
+                    width: 65px;
+                    height: 65px;
+                    background-color: #000;
+                    border-radius: 50%;
+                    position: absolute;
+                    bottom: 53px;
+                    right: 40px;
+                }
+
+                #{$bl}__arrow {
+                    width: 24px;
+                    height: 24px;
+                    position: absolute;
+                    bottom: 20px;
+                    right: 20px;
+                }
             }
 
             @media (min-width: 1728px) {
@@ -116,7 +118,7 @@
                     }
                 }
 
-                #{$bl}__circle {
+                #{$bl}__button {
                     width: 118px;
                     height: 118px;
                     bottom: 68px;
@@ -127,11 +129,21 @@
                     width: 43px;
                     height: 43px;
                     position: absolute;
-                    bottom: 105px;
-                    right: 120px;
+                    bottom: 38px;
+                    right: 38px;
                 }
             }
         }
+    }
+
+    &__link {
+        text-decoration: none;
+        position: absolute;
+        z-index: 3;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
     }
 
     &__image {
@@ -157,6 +169,7 @@
 
         @media (min-width: 1728px) {
             margin-bottom: 21px;
+            width: 680px;
         }
     }
 
@@ -178,9 +191,10 @@
 
     &__button {
         @include clear-button;
-    }
-
-    &__circle {
+        z-index: 4;
+        position: absolute;
+        right: 0;
+        bottom: 0;
         width: 38px;
         height: 38px;
         background-color: #000;
@@ -201,14 +215,14 @@
         width: 14px;
         height: 14px;
         position: absolute;
-        bottom: 37px;
-        right: 32px;
+        right: 12px;
+        bottom: 12px;
 
         @media (min-width: 1728px) {
             width: 21px;
             height: 21px;
-            bottom: 58px;
-            right: 59px;
+            right: 19px;
+            bottom: 19px;
         }
     }
 
@@ -243,12 +257,14 @@
 
         &--big {
             &::after {
-                background-size: 120px 65px;
-                width: 120px;
-                height: 65px;
-                font-size: 36px;
-                line-height: 60px;
-                top: 104px;
+                @media (min-width: 768px) {
+                    background-size: 120px 65px;
+                    width: 120px;
+                    height: 65px;
+                    font-size: 36px;
+                    line-height: 60px;
+                    top: 104px;
+                }
             }
         }
     }
