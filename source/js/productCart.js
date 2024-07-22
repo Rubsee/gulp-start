@@ -50,7 +50,7 @@ const addProductToCart = (product, isClick = false) => {
     }
 
     cartList.append(node);
-    addToStorage(product, 'cart');
+    addToStorage('cart', product);
     cartCount.textContent = cartList.childElementCount;
 };
 
