@@ -22,12 +22,12 @@ const closeShoppingCart = () => {
 const removeProductFromCart = (productId) => {
     const node = cartList.querySelector(`[data-product-id="${productId}"]`);
     node.remove();
-    cartCount.textContent = cartList.childElementCount;
+    cartCount.textContent = getStorage('cart').length;
 
     if (!cartList.childElementCount) {
         cart.classList.remove('shopping-cart--active');
     }
-    removeFromStorage(productId, 'cart');
+    removeFromStorage('cart', productId);
 };
 
 const addProductToCart = (product, isClick = false) => {
@@ -38,7 +38,6 @@ const addProductToCart = (product, isClick = false) => {
     node.querySelector('.shopping-cart__image').src = product.image;
     node.querySelector('.shopping-cart__name').textContent = product.name;
     node.querySelector('.shopping-cart__price').textContent = `${product.price} ₽`;
-
 
     node.querySelector('.shopping-cart__delete').addEventListener('click', (event) => {
         removeProductFromCart(product.id);
@@ -51,14 +50,14 @@ const addProductToCart = (product, isClick = false) => {
 
     cartList.append(node);
     addToStorage('cart', product);
-    cartCount.textContent = cartList.childElementCount;
+    cartCount.textContent = getStorage('cart').length;
 };
 
 if (getStorage('cart')?.length) {
     getStorage('cart').forEach(product => {
         addProductToCart(product);
     });
-    cartCount.textContent = cartList.childElementCount;
+    cartCount.textContent = getStorage('cart').length;
 }
 
 document.addEventListener('click', (event) => {
