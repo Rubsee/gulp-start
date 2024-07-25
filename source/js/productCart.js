@@ -22,7 +22,7 @@ const closeShoppingCart = () => {
 const removeProductFromCart = (productId) => {
     const node = cartList.querySelector(`[data-product-id="${productId}"]`);
     node.remove();
-    cartCount.textContent = getStorage('cart').length;
+    cartCount.textContent = cartList.childElementCount;
 
     if (!cartList.childElementCount) {
         cart.classList.remove('shopping-cart--active');
@@ -45,12 +45,11 @@ const addProductToCart = (product, isClick = false) => {
     });
 
     if (isClick) {
-        openModal(modalCart);
+        addToStorage('cart', product);
+        cartCount.textContent = getStorage('cart')?.length;
     }
 
     cartList.append(node);
-    addToStorage('cart', product);
-    cartCount.textContent = getStorage('cart').length;
 };
 
 if (getStorage('cart')?.length) {
