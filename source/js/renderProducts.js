@@ -1,4 +1,6 @@
-import { addProductToCart } from './productCart.js';
+import { addToStorage, getStorage } from './localstorage.js';
+import { cartCount } from './productCart.js';
+import { renderCart } from './renderCart.js';
 
 export default (products, template, target, isTargetList = false, templateClass = '') => {
     const fragment = document.createDocumentFragment();
@@ -64,7 +66,11 @@ export default (products, template, target, isTargetList = false, templateClass 
 
         buttonEl.addEventListener('click', () => {
             modal.classList.add('slick-notification--showed');
-            addProductToCart(product, true);
+            addToStorage('cart', product);
+            renderCart();
+
+            const itemData = getStorage('cart');
+            cartCount.textContent = Number(itemData.length);
         });
 
         const closeModal = () => {

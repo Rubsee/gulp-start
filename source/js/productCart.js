@@ -7,7 +7,7 @@ const buttonClosed = document.querySelector('.shopping-cart__close');
 const cart = document.querySelector('.shopping-cart');
 const cartList = document.querySelector('.shopping-cart__list');
 const cartProductTemplate = document.querySelector('.shopping-cart-product').content;
-const cartCount = buttonOpened.querySelector('.user-nav__button.user-nav__button--pin');
+export const cartCount = buttonOpened.querySelector('.user-nav__button.user-nav__button--pin');
 
 buttonOpened.addEventListener('click', () => {
     shoppingCart.classList.add('shopping-cart--active');
@@ -38,11 +38,6 @@ const addProductToCart = (product, isClick = false) => {
     node.querySelector('.shopping-cart__image').src = product.image;
     node.querySelector('.shopping-cart__name').textContent = product.name;
     node.querySelector('.shopping-cart__price').textContent = `${product.price} ₽`;
-
-    node.querySelector('.shopping-cart__delete').addEventListener('click', (event) => {
-        removeProductFromCart(product.id);
-        event.stopPropagation();
-    });
 
     if (isClick) {
         addToStorage('cart', product);
