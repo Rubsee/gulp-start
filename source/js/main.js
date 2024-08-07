@@ -1,6 +1,5 @@
 import renderProducts from './renderProducts.js';
 import './script.js';
-import './productCart.js';
 import './renderCart.js';
 import { fetchParams } from './fetchParams.js';
 

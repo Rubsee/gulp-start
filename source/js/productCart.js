@@ -1,3 +1,4 @@
+import formatPrice from './formatPrice.js';
 import { addToStorage, removeFromStorage, getStorage } from './localstorage.js';
 
 const buttonOpened = document.querySelector('.user-nav__button.user-nav__button--shop');
@@ -37,7 +38,7 @@ const addProductToCart = (product, isClick = false) => {
     node.dataset.productId = product.id;
     node.querySelector('.shopping-cart__image').src = product.image;
     node.querySelector('.shopping-cart__name').textContent = product.name;
-    node.querySelector('.shopping-cart__price').textContent = `${product.price} ₽`;
+    node.querySelector('.shopping-cart__price').textContent = formatPrice(product.price);
 
     if (isClick) {
         addToStorage('cart', product);

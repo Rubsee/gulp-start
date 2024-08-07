@@ -20,25 +20,25 @@
       <div class="slick-notification__window"></div>
     </div>
   </div>
-  <div class="error-order">
-    <div class="error-order__active">
-      <button class="error-order__close">
-        <img class="error-order__image" src="img/icon_close.svg">
+  <div class="status-order">
+    <div class="status-order__active">
+      <button class="status-order__close">
+        <img class="status-order__image" src="img/icon_close.svg">
       </button>
-      <h2 class="error-order__title">Ошибка!</h2>
-      <p class="error-order__text">Что-то пошло не так. Мы уже знаем<br> о проблеме. Зайдите позже.</p>
-      <button class="error-order__accept black-button">Продолжить покупки</button>
-      <div class="error-order__window"></div>
+      <h2 class="status-order__title">Ошибка!</h2>
+      <p class="status-order__text">Что-то пошло не так. Мы уже знаем<br> о проблеме. Зайдите позже.</p>
+      <button class="status-order__accept black-button">Продолжить покупки</button>
+      <div class="status-order__window"></div>
     </div>
   </div>
-  <div class="confirm-order">
-    <div class="confirm-order__active">
-      <button class="confirm-order__close">
-        <img class="confirm-order__image" src="img/icon_close.svg">
+  <div class="status-order">
+    <div class="status-order__active">
+      <button class="status-order__close">
+        <img class="status-order__image" src="img/icon_close.svg">
       </button>
-      <p class="confirm-order__text">Заказ оформлен.<br> Ожидайте звонка</p>
-      <button class="confirm-order__accept black-button">Вернуться на главную</button>
-      <div class="confirm-order__window"></div>
+      <p class="status-order__text">Заказ оформлен.<br> Ожидайте звонка</p>
+      <button class="status-order__accept black-button">Вернуться на главную</button>
+      <div class="status-order__window"></div>
     </div>
   </div>
   <header class="header">
@@ -99,12 +99,12 @@
                   <span class="shopping-cart__name">Running sport shoe</span>
                 </div>
                 <div class="shopping-cart__sneaker-total">
-                  <span class="shopping-cart__partition">|</span>
-                  <button class="shopping-cart__count-button shopping-cart__count-button--minus">-</button>
-                  <input type="text" name="shopping-cart-counter" class="shopping-cart__counter" placeholder="0">
-                  <button class="shopping-cart__count-button shopping-cart__count-button--plus">+</button>
-                  <span class="shopping-cart__partition">|</span>
-                  <span class="shopping-cart__price">3999 ₽</span>
+                  <div class="shopping-cart__wrapper">
+                    <button class="shopping-cart__count-button shopping-cart__count-button--minus">-</button>
+                    <input type="text" name="shopping-cart-counter" class="shopping-cart__counter" placeholder="0">
+                    <button class="shopping-cart__count-button shopping-cart__count-button--plus">+</button>
+                  </div>
+                  <span class="shopping-cart__price">3999</span>
                 </div>
               </li>
             </template>

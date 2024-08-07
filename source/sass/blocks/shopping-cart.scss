@@ -159,6 +159,17 @@
         margin: 0 10px;
     }
 
+    &__wrapper {
+        display: flex;
+        align-items: center;
+    }
+
+    &__wrapper::after,
+    &__wrapper::before {
+        content: '|';
+        margin: 0 10px;
+    }
+
     &__count-button {
         @include clear-button;
         font-size: 21px;

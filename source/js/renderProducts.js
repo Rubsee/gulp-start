@@ -1,3 +1,4 @@
+import formatPrice from './formatPrice.js';
 import { addToStorage, getStorage } from './localstorage.js';
 import { cartCount } from './productCart.js';
 import { renderCart } from './renderCart.js';
@@ -38,8 +39,8 @@ export default (products, template, target, isTargetList = false, templateClass 
         linkEl.href = link;
         imageEl.src = image;
         nameEl.textContent = name;
-        priceEl.textContent = `${price} ₽`;
-        oldPriceEl.textContent = `${oldPrice} ₽`;
+        priceEl.textContent = formatPrice(price);
+        oldPriceEl.textContent = formatPrice(oldPrice);
         buttonEl.className = 'product-list__button';
         buttonEl.appendChild(arrowImgEl);
 
