@@ -1,6 +1,6 @@
 import renderProducts from './renderProducts.js';
 import './script.js';
-import './productCart.js';
+import './renderCart.js';
 import { fetchParams } from './fetchParams.js';
 
 const catalogList = document.querySelector('.best-selling__product-wrapper.product-list');
