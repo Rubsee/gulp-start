@@ -1,0 +1,239 @@
+.most-popular {
+    margin-top: 57px;
+
+    @media (min-width: 768px) {
+        margin-top: 66px;
+    }
+
+    @media (min-width: 1728px) {
+        margin-top: 132px;
+    }
+
+    &__container {}
+
+    &__wrap-wrapper {
+        position: relative;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        align-items: center;
+
+        @media (min-width: 768px) {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    &__info {
+        color: #000;
+        width: 290px;
+    }
+
+    &__today {
+        font-size: 24px;
+
+        &::before {
+            content: '';
+            width: 47px;
+            height: 2px;
+            background-color: hsl(0, 0%, 0%);
+            display: inline-block;
+            vertical-align: middle;
+            transform: translateY(-2px);
+            margin-right: 22px;
+        }
+    }
+
+    &__title {
+        font-size: 45px;
+        margin: 15px 0 25px 0;
+    }
+
+    &__desc {
+        font-size: 18px;
+        margin: 0 0 25px 0;
+    }
+
+    &__button {
+        font-size: 28px;
+        width: 100%;
+        height: 77px;
+    }
+
+    &__swiper {
+        position: relative;
+        overflow: hidden;
+        width: 310px;
+        margin-left: -5px;
+        margin-right: -5px;
+
+        @media (min-width: 768px) {
+            margin-left: 70px;
+            margin-right: 0;
+        }
+
+        @media (min-width: 1728px) {
+            width: 1140px;
+            margin-left: 70px;
+        }
+    }
+
+    &__arrow {
+        @include clear-button;
+        display: block;
+        width: 7px;
+        height: 5px;
+        position: absolute;
+        bottom: 0;
+        cursor: pointer;
+        z-index: 3;
+
+        @media (min-width: 768px) {
+            width: 15px;
+            height: 27px;
+        }
+
+        &--right {
+            left: 90px;
+            bottom: 15px;
+
+            @media (min-width: 768px) {
+                bottom: 50%;
+                left: 35px;
+            }
+
+            @media (min-width: 1728px) {
+                left: 40px;
+            }
+        }
+
+        &--left {
+            transform: rotate(180deg);
+            right: 90px;
+            bottom: -5px;
+
+            @media (min-width: 768px) {
+                bottom: 50%;
+                right: -35px;
+            }
+
+            @media (min-width: 1728px) {
+                right: -30px;
+            }
+        }
+    }
+
+    &__arrow img {
+        width: 7px;
+        height: 5px;
+
+        @media (min-width: 768px) {
+            width: 15px;
+            height: 27px;
+        }
+    }
+
+    &__pagination-list {
+        @include clear-list;
+        display: flex;
+        position: absolute;
+        width: auto !important;
+        left: auto !important;
+        top: auto !important;
+        bottom: -20px !important;
+        right: calc(50% - 70px) !important;
+        z-index: 4;
+
+        @media (min-width: 768px) {
+            right: calc(50% - 100px) !important;
+        }
+
+        @media (min-width: 1728px) {
+            bottom: -60px !important;
+            right: calc(50% - 110px) !important;
+        }
+    }
+
+    &__pagination-item {
+        border-radius: 50%;
+        width: 11px;
+        height: 11px;
+        background-color: #000;
+        margin: 0 10px;
+        transition: width 0.3s;
+    }
+
+    &__pagination-item--active {
+        width: 30px;
+        border-radius: 12px;
+    }
+
+    &__list-wrapper {}
+
+    &__list {
+        padding: 0;
+    }
+
+    &__item {
+        border: 2px solid #000;
+        border-radius: 25px;
+        border-color: #DEDEDE;
+        color: #000;
+        background-color: rgba(217, 217, 217, 0.15);
+        position: relative;
+        width: 310px !important;
+        padding: 30px 36px;
+
+        // @media (min-width: 768px) {}
+
+        @media (min-width: 1728px) {
+            margin: 0 35px;
+        }
+    }
+
+    &__item-link {
+        text-decoration: none;
+        position: absolute;
+        z-index: 3;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    &__item-image {
+        width: 225px;
+        height: 225px;
+        margin-top: -30px;
+    }
+
+    &__item-title {
+        font-size: 21px;
+        font-weight: 400;
+        margin-top: 10px;
+    }
+
+    &__item-price {
+        font-size: 24px;
+    }
+
+    &__item-button {
+        position: absolute;
+        bottom: 30px;
+        right: 30px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #000;
+    }
+
+    &__item-arrow {
+        width: 17px;
+        height: 17px;
+    }
+}

@@ -8,7 +8,7 @@ import csso from 'postcss-csso';
 import rename from 'gulp-rename';
 import svgo from 'gulp-svgmin';
 import svgstore from 'gulp-svgstore';
-import {deleteAsync} from 'del';
+import { deleteAsync } from 'del';
 import optimizeImages from 'gulp-optimize-images';
 import webp from 'gulp-webp';
 
@@ -27,13 +27,13 @@ const styles = () => {
 
 const html = () => {
   return gulp.src('source/*.html')
-  .pipe(gulp.dest('build'));
+    .pipe(gulp.dest('build'));
 };
 
 const scripts = () => {
   return gulp.src('source/js/*.js')
-  .pipe(gulp.dest('build/js'))
-  .pipe(browser.stream());
+    .pipe(gulp.dest('build/js'))
+    .pipe(browser.stream());
 };
 
 const optimizeImagesAll = () => {
@@ -45,12 +45,12 @@ const optimizeImagesAll = () => {
           progressive: true,
         },
         png: {
-            quality: 90,
-            progressive: true,
-            compressionLevel: 6,
+          quality: 90,
+          progressive: true,
+          compressionLevel: 6,
         },
         webp: {
-            quality: 80,
+          quality: 80,
         },
       }
     }))
@@ -59,26 +59,26 @@ const optimizeImagesAll = () => {
 
 const imageWebp = () => {
   return gulp.src('source/img/**/*.{png,jpg}')
-  .pipe(webp())
-  .pipe(gulp.dest('source/img'))
+    .pipe(webp())
+    .pipe(gulp.dest('source/img'))
 };
 
 const copyImages = () => {
   return gulp.src('source/img/**/*.{png,jpg,webp}')
-  .pipe(gulp.dest('build/img'))
+    .pipe(gulp.dest('build/img'))
 };
 
 const svg = () =>
   gulp.src(['source/img/*.svg', '!source/img/icons/*.svg'])
-  .pipe(svgo())
-  .pipe(gulp.dest('build/img'));
+    .pipe(svgo())
+    .pipe(gulp.dest('build/img'));
 
 const sprite = () => {
   return gulp.src('source/img/icons/*.svg')
     .pipe(svgo())
     .pipe(svgstore({
-    inlineSvg: true
-  }))
+      inlineSvg: true
+    }))
     .pipe(rename('sprite.svg'))
     .pipe(gulp.dest('build/img'));
 };
@@ -91,7 +91,7 @@ const copy = (done) => {
   ], {
     base: 'source'
   })
-  .pipe(gulp.dest('build'))
+    .pipe(gulp.dest('build'))
   done();
 };
 
@@ -101,15 +101,15 @@ const clean = async () => {
 
 const watcher = () => {
   gulp.watch('source/sass/**/*.scss', gulp.series(styles));
-  gulp.watch('source/js/*.js', gulp.series(scripts));
+  gulp.watch('source/js/**/*.js', gulp.series(scripts));
   gulp.watch('source/*.html', gulp.series(html, reload));
 }
 
 const server = (done) => {
   browser.init({
     server: {
-    baseDir: 'build'
-  },
+      baseDir: 'build'
+    },
     cors: true,
     notify: false,
     ui: false,
@@ -151,4 +151,4 @@ export default gulp.series(
   gulp.series(
     server,
     watcher
-));
+  ));
