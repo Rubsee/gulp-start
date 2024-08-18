@@ -170,77 +170,72 @@
         </li>
       </ul>
     </section>
-
-
     <section class="most-popular">
       <div class="container">
-        <div class="most-popular__wrapper">
+        <div class="most-popular__main">
           <div class="most-popular__info">
             <span class="most-popular__today">Сегодня в тренде</span>
             <h2 class="most-popular__title">Самые<br>популярные</h2>
             <p class="most-popular__desc">Посмотрите, что чаще всего<br> покупают у нас</p>
             <button class="most-popular__button black-button">Показать все</button>
           </div>
-
-          <div class="most-popular__wrap-wrapper">
-            <button class="most-popular__arrow most-popular__arrow--right">
-              <img src="img/most-popular-arrow.svg" alt="">
-            </button>
-            <button class="most-popular__arrow most-popular__arrow--left">
-              <img src="img/most-popular-arrow.svg" alt="">
-            </button>
-            <ul class="most-popular__pagination-list">
-              <li class="most-popular__pagination-item"></li>
-              <li class="most-popular__pagination-item most-popular__pagination-item--active"></li>
-              <li class="most-popular__pagination-item"></li>
+          <div class="most-popular__wrapper">
+            <div class="arrow">
+              <button class="arrow__most-popular arrow__most-popular--right">
+                <img src="img/most-popular-arrow.svg" alt="">
+              </button>
+              <button class="arrow__most-popular arrow__most-popular--left">
+                <img src="img/most-popular-arrow.svg" alt="">
+              </button>
+            </div>
+            <ul class="pagination pagination--most-popular">
+              <li class="pagination__item"></li>
+              <li class="pagination__item pagination__item--active"></li>
+              <li class="pagination__item"></li>
             </ul>
-
             <div class="most-popular__swiper">
-
-
-
-              <ul class="most-popular__list swiper-wrapper">
-                <li class="most-popular__item swiper-slide">
-                  <a class="most-popular__item-link" href=""></a>
+              <ul class="most-popular__list product-list swiper-wrapper">
+                <li class="most-popular__item product-list__card swiper-slide">
+                  <a class="most-popular__item-link product-list__link" href=""></a>
                   <img class="most-popular__item-image" src="img/most-popular-blackSneaker.png" alt="">
                   <h3 class="most-popular__item-title">Running sport shoe</h3>
                   <div class="most-popular__item-price">
                     <span>2 999 ₽ </span>
                   </div>
-                  <button class="most-popular__item-button">
+                  <button class="most-popular__item-button product-list__button">
                     <img class="most-popular__item-arrow" src="img/arrow-icon.svg" alt="">
                   </button>
                 </li>
-                <li class="most-popular__item swiper-slide">
-                  <a class="most-popular__item-link" href=""></a>
+                <li class="most-popular__item product-list__card swiper-slide">
+                  <a class="most-popular__item-link product-list__link" href=""></a>
                   <img class="most-popular__item-image" src="img/banner-sneaker2.png" alt="">
                   <h3 class="most-popular__item-title">Running sport shoe</h3>
                   <div class="most-popular__item-price">
                     <span>2 999 ₽ </span>
                   </div>
-                  <button class="most-popular__item-button">
+                  <button class="most-popular__item-button product-list__button">
                     <img class="most-popular__item-arrow" src="img/arrow-icon.svg" alt="">
                   </button>
                 </li>
-                <li class="most-popular__item swiper-slide">
-                  <a class="most-popular__item-link" href=""></a>
+                <li class="most-popular__item product-list__card swiper-slide">
+                  <a class="most-popular__item-link product-list__link" href=""></a>
                   <img class="most-popular__item-image" src="img/banner-sneaker1.png" alt="">
                   <h3 class="most-popular__item-title">Running sport shoe</h3>
                   <div class="most-popular__item-price">
                     <span>2 999 ₽ </span>
                   </div>
-                  <button class="most-popular__item-button">
+                  <button class="most-popular__item-button product-list__button">
                     <img class="most-popular__item-arrow" src="img/arrow-icon.svg" alt="">
                   </button>
                 </li>
-                <li class="most-popular__item swiper-slide">
-                  <a class="most-popular__item-link" href=""></a>
+                <li class="most-popular__item product-list__card swiper-slide">
+                  <a class="most-popular__item-link product-list__link" href=""></a>
                   <img class="most-popular__item-image" src="img/banner-sneaker1.png" alt="">
                   <h3 class="most-popular__item-title">Running sport shoe</h3>
                   <div class="most-popular__item-price">
                     <span>2 999 ₽ </span>
                   </div>
-                  <button class="most-popular__item-button">
+                  <button class="most-popular__item-button product-list__button">
                     <img class="most-popular__item-arrow" src="img/arrow-icon.svg" alt="">
                   </button>
                 </li>
@@ -251,21 +246,21 @@
       </div>
       </div>
     </section>
-
-
     <section class="banners">
       <div class="container">
         <div class="banners__swiper">
-          <button class="banners__arrow banners__arrow--right">
-            <img src="img/icon-arrow-right.svg" alt="">
-          </button>
-          <button class="banners__arrow banners__arrow--left">
-            <img src="img/icon-arrow-right.svg" alt="">
-          </button>
-          <ul class="banners__pagination-list">
-            <li class="banners__pagination-item"></li>
-            <li class="banners__pagination-item banners__pagination-item--active"></li>
-            <li class="banners__pagination-item"></li>
+          <div class="arrow">
+            <button class="arrow__banners arrow__banners--right">
+              <img src="img/icon-arrow-right.svg" alt="">
+            </button>
+            <button class="arrow__banners arrow__banners--left">
+              <img src="img/icon-arrow-right.svg" alt="">
+            </button>
+          </div>
+          <ul class="pagination pagination--banners">
+            <li class="pagination__item"></li>
+            <li class="pagination__item pagination__item--active"></li>
+            <li class="pagination__item"></li>
           </ul>
           <ul class="banners__list swiper-wrapper">
             <li class="banners__item swiper-slide">
