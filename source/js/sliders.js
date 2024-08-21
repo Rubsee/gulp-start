@@ -6,7 +6,7 @@ const swiper = new Swiper('.banners__swiper', {
     spaceBetween: 30,
     // If we need pagination
     pagination: {
-        el: '.pagination--banners',
+        el: '.banners__numbering',
         bulletActiveClass: 'pagination__item--active',
         bulletClass: 'pagination__item',
     },
@@ -38,7 +38,7 @@ const swiperPopular = new Swiper('.most-popular__swiper', {
     },
     // If we need pagination
     pagination: {
-        el: '.pagination--most-popular',
+        el: '.most-popular__numbering',
         bulletActiveClass: 'pagination__item--active',
         bulletClass: 'pagination__item',
     },

@@ -20,30 +20,4 @@
         width: 30px;
         border-radius: 12px;
     }
-
-    &--most-popular {
-        bottom: -20px !important;
-        right: calc(50% - 70px) !important;
-
-        @media (min-width: 768px) {
-            right: calc(50% - 110px) !important;
-        }
-
-        @media (min-width: 1728px) {
-            bottom: -60px !important;
-        }
-    }
-
-    &--banners {
-        bottom: 20px !important;
-        right: calc(50% - 56px) !important;
-
-        .pagination__item {
-            background-color: #fff;
-        }
-
-        @media (min-width: 768px) {
-            right: 40px !important;
-        }
-    }
 }

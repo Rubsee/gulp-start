@@ -180,4 +180,17 @@
         width: 110px;
         height: 110px;
     }
+
+    &__numbering {
+        bottom: 20px !important;
+        right: calc(50% - 56px) !important;
+
+        .pagination__item {
+            background-color: #fff;
+        }
+
+        @media (min-width: 768px) {
+            right: 40px !important;
+        }
+    }
 }

@@ -129,4 +129,17 @@
         width: 17px;
         height: 17px;
     }
+
+    &__numbering {
+        bottom: -20px !important;
+        right: calc(50% - 70px) !important;
+
+        @media (min-width: 768px) {
+            right: calc(50% - 110px) !important;
+        }
+
+        @media (min-width: 1728px) {
+            bottom: -60px !important;
+        }
+    }
 }
