@@ -90,7 +90,6 @@ export const renderCart = () => {
 
         cartList.append(fragment);
 
-
         const totalEl = document.querySelector('.shopping-cart__total-quantity span');
         totalEl.textContent = data.length;
 

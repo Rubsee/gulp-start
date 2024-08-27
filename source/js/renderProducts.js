@@ -2,6 +2,7 @@ import formatPrice from './formatPrice.js';
 import { addToStorage, getStorage } from './localstorage.js';
 import { cartCount } from './productCart.js';
 import { renderCart } from './renderCart.js';
+import Modal from './modal.js';
 
 export default (products, template, target, isTargetList = false, templateClass = '') => {
     const fragment = document.createDocumentFragment();
@@ -30,8 +31,8 @@ export default (products, template, target, isTargetList = false, templateClass 
         const oldPriceEl = itemEl.querySelector('.product-list__price.product-list__price--old');
         const buttonEl = itemEl.querySelector('.product-list__button');
         const arrowImgEl = itemEl.querySelector('.product-list__arrow');
-        const modal = document.querySelector('.slick-notification');
-        const modalClosed = document.querySelector('.slick-notification__close')
+        const slickModalEl = document.querySelector('.slick-notification');
+        const modalClosed = document.querySelector('.slick-notification__close');
         const modalContinue = document.querySelector('.slick-notification__accept.black-button');
         const { id, link, image, name, price, oldPrice } = product;
 
@@ -64,9 +65,9 @@ export default (products, template, target, isTargetList = false, templateClass 
         }
 
         // Вызов модального окна о подтверждении добавления товара в корзину
-
         buttonEl.addEventListener('click', () => {
-            modal.classList.add('slick-notification--showed');
+            const slickModal = new Modal(slickModalEl, 'slick-notification--showed');
+            slickModal.openModal();
             addToStorage('cart', product);
             renderCart();
 
@@ -74,12 +75,17 @@ export default (products, template, target, isTargetList = false, templateClass 
             cartCount.textContent = Number(itemData.length);
         });
 
-        const closeModal = () => {
-            modal.classList.remove('slick-notification--showed');
-        };
+        modalClosed.addEventListener('click', () => {
+            const slickModal = new Modal(slickModalEl, 'slick-notification--showed');
+            slickModal.closeModal();
+        });
 
-        modalClosed.addEventListener('click', closeModal);
-        modalContinue.addEventListener('click', closeModal);
+        modalContinue.addEventListener('click', () => {
+            const slickModal = new Modal(slickModalEl, 'slick-notification--showed');
+            slickModal.closeModal();
+        });
+
+        cartCount.textContent = getStorage('cart')?.length || 0;
 
         fragment.appendChild(itemEl);
     });

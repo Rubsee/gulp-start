@@ -1,4 +1,5 @@
 import { addToStorage, removeFromStorage, getStorage } from './localstorage.js';
+import Modal from './modal.js';
 
 const buttonOpened = document.querySelector('.user-nav__button.user-nav__button--shop');
 const shoppingCart = document.querySelector('.shopping-cart');
@@ -10,16 +11,19 @@ const cartProductTemplate = document.querySelector('.shopping-cart-product')?.co
 export const cartCount = buttonOpened?.querySelector('.user-nav__button.user-nav__button--pin');
 
 if (buttonOpened) {
+
     buttonOpened.addEventListener('click', () => {
-        shoppingCart.classList.add('shopping-cart--active');
-        buttonClosed.addEventListener('click', closeShoppingCart);
+        const openShop = new Modal(shoppingCart, 'shopping-cart--active');
+        openShop.openModal();
+        buttonClosed.addEventListener('click', buttonClosed);
     });
 }
 
-const closeShoppingCart = () => {
-    shoppingCart.classList.remove('shopping-cart--active');
-    buttonClosed.removeEventListener('click', closeShoppingCart);
-};
+buttonClosed.addEventListener('click', () => {
+    const openShop = new Modal(shoppingCart, 'shopping-cart--active');
+    openShop.closeModal();
+    buttonClosed.removeEventListener('click', buttonClosed);
+});
 
 const removeProductFromCart = (productId) => {
     const node = cartList.querySelector(`[data-product-id="${productId}"]`);
@@ -53,14 +57,16 @@ const addProductToCart = (product, isClick = false) => {
     if (getStorage('cart')?.length) {
         getStorage('cart').forEach(product => {
             addProductToCart(product);
+            cartCount.textContent = getStorage('cart').length;
         });
-        cartCount.textContent = getStorage('cart').length;
     }
 
-    document.addEventListener('click', (event) => {
-        if (!shoppingCart.contains(event.target) && !buttonOpened.contains(event.target)) {
-            closeShoppingCart();
-        }
-    });
 }
+document.addEventListener('click', (event) => {
+    if (!shoppingCart.contains(event.target) && !buttonOpened.contains(event.target)) {
+        const openShop = new Modal(shoppingCart, 'shopping-cart--active');
+        openShop.closeModal();
+    }
+});
+
 export { removeProductFromCart, addProductToCart };
