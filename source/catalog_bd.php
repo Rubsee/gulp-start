@@ -1,4 +1,3 @@
-<pre>
 <?php
 //rubsee.ru
 //rubsee.ru/slick наш сайт
@@ -65,4 +64,3 @@ echo $my_data;
 
 $conn->close();
 ?>
-</pre>
