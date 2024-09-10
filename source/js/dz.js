@@ -35,28 +35,51 @@ const flats = [
   },
 ];
 
-
-//ВАРИАНТ 3(после подсказки)
-const addedProjects = [];
+//ВАРИАНТ 4(вроде более правильный вариант)
+const addedProjectsMap = new Map;
 
 const projectAll = flats.map(flat => {
   const { project, ...flatWithoutProject } = flat;
 
-  let existingProject = addedProjects.find(proj => proj.id === project.id);
-
-  if (!existingProject) {
+  if (!addedProjectsMap.has(project.id)) {
     const newProject = {
       name: flat.project.name,
       id: flat.project.id,
       flats: [flatWithoutProject],
     };
-    addedProjects.push(newProject);
+    addedProjectsMap.set(project.id, newProject);
   } else {
-    existingProject.flats.push(flatWithoutProject);
+    addedProjectsMap.get(project.id).flats.push(flatWithoutProject);
   }
 });
 
+const addedProjects = Array.from(addedProjectsMap.values())
+
 console.log(addedProjects)
+
+
+
+//ВАРИАНТ 3(после подсказки)
+// const addedProjects = [];
+
+// const projectAll = flats.map(flat => {
+//   const { project, ...flatWithoutProject } = flat;
+
+//   let existingProject = addedProjects.find(proj => proj.id === project.id);
+
+//   if (!existingProject) {
+//     const newProject = {
+//       name: flat.project.name,
+//       id: flat.project.id,
+//       flats: [flatWithoutProject],
+//     };
+//     addedProjects.push(newProject);
+//   } else {
+//     existingProject.flats.push(flatWithoutProject);
+//   }
+// });
+
+// console.log(addedProjects)
 
 
 
